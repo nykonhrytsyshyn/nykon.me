@@ -11,13 +11,7 @@ import { ReactElement } from "react";
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   return (
-    <ThemeProvider
-      enableSystem
-      attribute="class"
-      defaultTheme="system"
-      forcedTheme={pageProps.theme || undefined}
-      storageKey="theme"
-    >
+    <ThemeProvider attribute="class" forcedTheme={pageProps.theme || undefined}>
       <HeroUIProvider navigate={useRouter().push}>
         <TransitionProvider>
           <Cursor />
