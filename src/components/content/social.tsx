@@ -97,7 +97,7 @@ export function SocialCategory({
         </h1>
       ) : null}
       <p
-        className={`${styles.scrollAnimated} text-lg text-neutral-600 dark:text-neutral-300 mb-8`}
+        className={`${styles.scrollAnimated} text-lg text-neutral-600 dark:text-neutral-500 mb-8`}
       >
         {props.subtitle}
       </p>

@@ -36,7 +36,7 @@ export default function HomePage(): ReactElement {
             {siteConfig.name}
           </h1>
           <p
-            className={`${styles.scrollAnimated} text-lg text-neutral-600 dark:text-neutral-300 py-3 leading-5`}
+            className={`${styles.scrollAnimated} text-lg text-neutral-600 dark:text-neutral-500 py-3 leading-5`}
           >
             Working on{" "}
             <Link
