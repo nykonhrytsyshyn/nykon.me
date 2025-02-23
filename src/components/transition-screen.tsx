@@ -17,7 +17,7 @@ export default function TransitionScreen(): ReactElement {
 
   return (
     <div
-      className={`fixed inset-0 bg-[#f5f5f5] dark:bg-[#0c0c0c] z-50 duration-500 ${
+      className={`fixed inset-0 bg-background z-50 duration-500 ${
         isContentVisible
           ? "opacity-0 pointer-events-none transition-opacity-out"
           : "opacity-100 transition-opacity-in"

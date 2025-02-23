@@ -9,10 +9,11 @@ export default function Document(): ReactElement {
       <Head />
       <body
         className={clsx(
-          "min-h-screen font-sans antialiased bg-[#f5f5f5] dark:bg-[#0c0c0c]",
+          "min-h-screen font-sans antialiased",
           fontSans.variable,
         )}
       >
+        <script src="/script/noflash.js" />
         <Main />
         <NextScript />
       </body>
