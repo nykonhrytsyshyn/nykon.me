@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 
 export default function Document(): ReactElement {
   return (
-    <Html suppressHydrationWarning lang="en">
+    <Html lang="en">
       <Head />
       <body
         className={clsx(
@@ -13,24 +13,6 @@ export default function Document(): ReactElement {
           fontSans.variable,
         )}
       >
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme') || 'system';
-                  var isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-                  if (isDark) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
         <Main />
         <NextScript />
       </body>
