@@ -5,11 +5,11 @@ import { ReactElement } from "react";
 
 export default function Document(): ReactElement {
   return (
-    <Html lang="en">
+    <Html suppressHydrationWarning lang="en">
       <Head />
       <body
         className={clsx(
-          "min-h-screen font-sans antialiased",
+          "min-h-screen font-sans antialiased bg-[#f5f5f5] dark:bg-[#0c0c0c]",
           fontSans.variable,
         )}
       >
