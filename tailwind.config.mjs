@@ -13,12 +13,9 @@ export default {
         mono: ["var(--font-mono)"],
       },
     },
-    darkSelector: ".dark",
-    lightSelector: ".light",
   },
   darkMode: "class",
   plugins: [
-    require("tailwindcss-dark-mode")(),
     heroui({
       prefix: "app",
       themes: {
