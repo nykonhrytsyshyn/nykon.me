@@ -1,0 +1,32 @@
+.galleryRow {
+  width: 200%;
+  gap: 25px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  will-change: transform;
+}
+
+.gallery {
+  overflow: hidden;
+}
+
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* noinspection CssUnresolvedCustomProperty */
+  background: linear-gradient(
+                  -90deg,
+                  hsl(var(--app-background)) 1%, /* Generated color */
+                  transparent 50%
+              ),
+              linear-gradient(
+                  90deg,
+                  hsl(var(--app-background)) 1%, /* Generated color */
+                  transparent 50%
+              );
+  z-index: 1;
+  pointer-events: none;
+}

@@ -34,7 +34,7 @@ export default function DefaultLayout({
       <Head />
       <TransitionScreen />
       <Navbar iconOnly={isMobileView} />
-      <main className="px-6 md:pt-16 max-md:pb-20">{children}</main>
+      <main>{children}</main>
     </TransitionProvider>
   );
 }

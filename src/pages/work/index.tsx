@@ -7,7 +7,7 @@ export default function WorkPage(): ReactElement {
 
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <section className="container md:pt-16 max-md:pb-28 px-6 flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <article className="inline-block max-w-lg text-center justify-center" />
       </section>
     </DefaultLayout>

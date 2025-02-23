@@ -19,7 +19,7 @@ export default function HomePage(): ReactElement {
 
   return (
     <DefaultLayout>
-      <section className="container mx-auto max-w-7xl flex flex-col items-center justify-center gap-12 py-8 md:py-10">
+      <section className="container md:pt-16 max-md:pb-28 px-6 mx-auto max-w-7xl flex flex-col items-center justify-center gap-12 py-8 md:py-10">
         <article
           className={`${styles.scrollAnimated} flex flex-col max-w-lg text-center justify-center items-center content-center`}
           id="about"

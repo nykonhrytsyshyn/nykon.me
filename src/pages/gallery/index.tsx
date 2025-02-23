@@ -1,30 +1,46 @@
 import DefaultLayout from "@layouts/default";
-import useScrollAnimation from "@hooks/use-scroll-animation";
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import galleryCards from "@configs/content/gallery-cards";
-import { Gallery, GalleryCard } from "@components/content/gallery";
-import { GalleryCardProps } from "@type/gallery";
+import "@styles/module/gallery.module.css";
+import { Gallery } from "@components/content/gallery";
+import useScrollAnimation from "@hooks/use-scroll-animation";
 
 export default function GalleryPage(): ReactElement {
   useScrollAnimation();
 
-  const cards = initCards();
+  const [rowCount, setRowCount] = useState(3);
+
+  useEffect(() => {
+    const updateRowCount = () => {
+      setRowCount(
+        window.innerHeight < 600 ? 1 : window.innerHeight < 800 ? 2 : 3,
+      );
+    };
+
+    updateRowCount();
+    window.addEventListener("resize", updateRowCount);
+
+    return () => {
+      window.removeEventListener("resize", updateRowCount);
+    };
+  }, []);
 
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <Gallery>{cards}</Gallery>
+      <section className="relative h-screen flex flex-col">
+        <Gallery properties={updateRows(rowCount)} />
       </section>
     </DefaultLayout>
   );
 }
 
-function initCards() {
-  const cards: ReactElement[] = [];
+function updateRows(count: number) {
+  const images = [...galleryCards, ...galleryCards];
 
-  galleryCards.forEach((properties: GalleryCardProps) => {
-    cards.push(<GalleryCard properties={properties} />);
-  });
-
-  return cards;
+  return Array.from({ length: count }, (_, i) =>
+    images.slice(
+      i * Math.ceil(images.length / count),
+      (i + 1) * Math.ceil(images.length / count),
+    ),
+  );
 }
