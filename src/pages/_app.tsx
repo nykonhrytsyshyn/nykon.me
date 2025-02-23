@@ -12,7 +12,7 @@ import { ReactElement } from "react";
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   return (
     <HeroUIProvider navigate={useRouter().push}>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider enableColorScheme attribute="class" defaultTheme="dark">
         <TransitionProvider>
           <Cursor />
           <Component {...pageProps} />
