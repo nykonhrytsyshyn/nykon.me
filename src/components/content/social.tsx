@@ -73,21 +73,24 @@ export function SocialCard({
  * Social category component
  *
  * @param props     Category properties.
+ * @param id        Category component id.
  * @param className Category component class name.
  * @param children  Category content.
  * @constructor
  */
 export function SocialCategory({
   props,
+  id,
   className,
   children,
 }: {
   props: SocialCategoryProps;
+  id?: string;
   className?: string | undefined;
   children: React.ReactNode;
 }): ReactElement {
   return (
-    <div className={className}>
+    <div className={className} id={id}>
       {props.title ? (
         <h1 className={`${styles.scrollAnimated} text-2xl font-bold`}>
           {props.title}

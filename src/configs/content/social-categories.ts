@@ -8,7 +8,7 @@ export const socialCategories: {
   props: SocialCategoryProps;
 }[] = [
   {
-    id: "default",
+    id: "social",
     props: {
       title: "Socials",
       subtitle: "Follow me on social media",

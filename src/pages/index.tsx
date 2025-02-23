@@ -55,6 +55,7 @@ export default function HomePage(): ReactElement {
             <SocialCategory
               key={category.id}
               className="text-center"
+              id={category.id}
               props={category.props}
             >
               {cardMap.get(category.id)}
@@ -76,7 +77,7 @@ function initCards() {
   >();
 
   socialCards.forEach((properties) => {
-    const category: SocialCategoryId = properties.category || "default";
+    const category: SocialCategoryId = properties.category || "social";
     const cards = cardMap.get(category) || [];
 
     cards.push(

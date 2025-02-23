@@ -24,4 +24,4 @@ export type SocialCategoryProps = {
 };
 
 /** Social card category type. */
-export type SocialCategoryId = "default" | "work" | "donate";
+export type SocialCategoryId = "social" | "work" | "donate";
