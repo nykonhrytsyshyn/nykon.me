@@ -34,8 +34,8 @@ export function SocialCard({
     >
       <Card
         className={clsx([
-          "w-full h-full min-h-52 md:min-h-64",
-          "flex flex-col justify-center items-center",
+          "w-full h-full min-h-24 sm:min-h-64",
+          "flex flex-row sm:flex-col justify-center sm:items-center",
           "rounded-[2.5rem] border-1 border-transparent",
           "hover:border-default hover:scale-[1.025] hover:bg-default-100",
           "focus:border-default focus:scale-[1.025] focus:bg-default-100",
@@ -45,19 +45,25 @@ export function SocialCard({
           <Image
             removeWrapper
             alt={properties.background.alt}
-            className="z-0 w-full h-full object-cover"
+            className="z-0 absolute w-full h-full object-cover"
             src={properties.background.src}
           />
         ) : null}
         {properties.icon ? (
-          <div className="flex items-center justify-center">
-            <Icon id={properties.icon} size={properties.iconSize || 52} />
+          <div
+            className={clsx([
+              "z-10 sm:flex sm:justify-center items-center px-6",
+              "max-sm:absolute top-1/4 left-0",
+            ])}
+          >
+            <Icon id={properties.icon} size={properties.iconSize || 50} />
           </div>
         ) : null}
         {properties.title ? (
           <h1
             className={clsx(
-              "absolute text-l font-light font-mono bottom-4 top-auto",
+              "z-10 sm:absolute bottom-4 top-auto text-l font-light font-mono ",
+              "max-sm:content-center",
               fontMono.variable,
             )}
           >
@@ -101,7 +107,7 @@ export function SocialCategory({
       >
         {props.subtitle}
       </p>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(18rem,1fr))] gap-4">
         {children}
       </div>
     </div>

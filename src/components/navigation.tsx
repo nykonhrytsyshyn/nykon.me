@@ -15,16 +15,15 @@ import { useRouter } from "next/router";
 import useTransitionScreen from "@hooks/use-transition-screen";
 import { NavItemProps } from "@type/navigation";
 import { Divider } from "@heroui/react";
+import clsx from "clsx";
 
 /**
  * Default navbar component.
  * <p>It uses the `siteConfig.navItems` to render the navigation items.</p>
  *
- * @param iconOnly If true, only the icons will be displayed.
- *                 Otherwise, the icons and labels will be displayed.
  * @constructor
  */
-export function Navbar({ iconOnly }: { iconOnly?: boolean }): ReactElement {
+export function Navbar(): ReactElement {
   return (
     <HeroUINavbar
       className={`${styles.navbar} backdrop-blur-none bg-background-none`}
@@ -39,14 +38,13 @@ export function Navbar({ iconOnly }: { iconOnly?: boolean }): ReactElement {
                 key={item.link.href}
                 href={item.link.href}
                 iconId={item.icon}
-                iconOnly={iconOnly || !item.label}
                 label={item.label || ""}
               />
               <NavDivider show={item.separation?.right} />
             </>
           ))}
         </div>
-        <ThemeSwitch className="backdrop-blur-md bg-transparent border-1 border-neutral-600 hover:bg-default/40 transition-all rounded-large max-h-10 max-w-10 min-w-10 min-h-10 justify-center" />
+        <ThemeSwitch />
       </NavbarContent>
     </HeroUINavbar>
   );
@@ -63,7 +61,6 @@ export function Navbar({ iconOnly }: { iconOnly?: boolean }): ReactElement {
  * @param href            The href to navigate to.
  * @param label           Button label, showed when `iconOnly` is false.
  * @param iconId          Icon id, see {@link Icon}.
- * @param iconOnly        If true, only the icon of the button will be displayed.
  * @param buttonClassName Button class name.
  * @param textClassName   Text class name.
  * @param props           Additional button props.
@@ -73,7 +70,6 @@ export function NavButton({
   href,
   label,
   iconId,
-  iconOnly,
   buttonClassName,
   textClassName,
   ...props
@@ -81,7 +77,6 @@ export function NavButton({
   href: string | undefined;
   label: string;
   iconId: IconId;
-  iconOnly?: boolean;
   buttonClassName?: string;
   textClassName?: string;
 } & ButtonProps): ReactElement {
@@ -112,15 +107,16 @@ export function NavButton({
   return (
     <NavbarItem>
       <Button
-        className={[
+        className={clsx(
           isActive
             ? "bg-default/60 border-neutral-600 text-default-900"
             : "border-transparent text-default-500",
+          "w-full",
           "min-w-14 transition-all border-1 hover:border-neutral-600 focus:border-neutral-600 px-4 gap-3",
           buttonClassName,
-        ].join(" ")}
+        )}
         color="default"
-        isIconOnly={iconOnly}
+        isIconOnly={true}
         radius="md"
         size="sm"
         startContent={<Icon id={iconId} size={16} />}
@@ -128,9 +124,11 @@ export function NavButton({
         onPress={handleNavigation}
         {...props}
       >
-        <h2 className={`text-sm ${textClassName}`}>
-          {iconOnly ? null : label}
-        </h2>
+        {label ? (
+          <h2 className={`max-sm:hidden sm:pl-3 text-sm ${textClassName}`}>
+            {label}
+          </h2>
+        ) : null}
       </Button>
     </NavbarItem>
   );

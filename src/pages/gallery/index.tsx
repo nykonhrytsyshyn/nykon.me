@@ -11,18 +11,9 @@ export default function GalleryPage(): ReactElement {
   const [rowCount, setRowCount] = useState(3);
 
   useEffect(() => {
-    const updateRowCount = () => {
-      setRowCount(
-        window.innerHeight < 600 ? 1 : window.innerHeight < 800 ? 2 : 3,
-      );
-    };
-
-    updateRowCount();
-    window.addEventListener("resize", updateRowCount);
-
-    return () => {
-      window.removeEventListener("resize", updateRowCount);
-    };
+    setRowCount(
+      window.innerHeight < 600 ? 1 : window.innerHeight < 800 ? 2 : 3,
+    );
   }, []);
 
   return (

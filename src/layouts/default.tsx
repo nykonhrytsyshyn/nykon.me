@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement } from "react";
 import { Navbar } from "@components/navigation";
 import Head from "@layouts/head";
 import TransitionScreen from "@components/transition-screen";
@@ -16,24 +16,11 @@ export default function DefaultLayout({
 }: {
   children: React.ReactNode;
 }): ReactElement {
-  /* State to track if the view is mobile */
-  const [isMobileView, setIsMobileView] = useState(false);
-
-  /* Check if the view is mobile on resize and update the state */
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-  });
-
   return (
     <TransitionProvider>
       <Head />
       <TransitionScreen />
-      <Navbar iconOnly={isMobileView} />
+      <Navbar />
       <main>{children}</main>
     </TransitionProvider>
   );
