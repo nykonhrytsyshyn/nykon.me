@@ -4,7 +4,11 @@ import { AnchorHTMLAttributes } from "react";
 
 /** Navigation item properties type. */
 export type NavItemProps = {
-  label: string;
+  label?: string;
   link: AnchorHTMLAttributes<HTMLAnchorElement>;
   icon: IconId;
+  separation?: {
+    left?: boolean;
+    right?: boolean;
+  };
 };

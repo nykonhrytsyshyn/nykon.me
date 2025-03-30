@@ -13,6 +13,8 @@ import { Icon } from "@components/icon";
 import React, { ReactElement, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useTransitionScreen from "@hooks/use-transition-screen";
+import { NavItemProps } from "@type/navigation";
+import { Divider } from "@heroui/react";
 
 /**
  * Default navbar component.
@@ -30,14 +32,18 @@ export function Navbar({ iconOnly }: { iconOnly?: boolean }): ReactElement {
     >
       <NavbarContent className="basis-full" justify="center">
         <div className="flex gap-1 backdrop-blur-md bg-transparent border-1 border-neutral-600 rounded-2xl h-10 items-center px-1 py-5">
-          {siteConfig.navItems.map((item) => (
-            <NavButton
-              key={item.link.href}
-              href={item.link.href}
-              iconId={item.icon}
-              iconOnly={iconOnly}
-              label={item.label}
-            />
+          {siteConfig.navItems.map((item: NavItemProps) => (
+            <>
+              <NavDivider show={item.separation?.left} />
+              <NavButton
+                key={item.link.href}
+                href={item.link.href}
+                iconId={item.icon}
+                iconOnly={iconOnly || !item.label}
+                label={item.label || ""}
+              />
+              <NavDivider show={item.separation?.right} />
+            </>
           ))}
         </div>
         <ThemeSwitch className="backdrop-blur-md bg-transparent border-1 border-neutral-600 hover:bg-default/40 transition-all rounded-large max-h-10 max-w-10 min-w-10 min-h-10 justify-center" />
@@ -128,4 +134,10 @@ export function NavButton({
       </Button>
     </NavbarItem>
   );
+}
+
+function NavDivider(
+  { show }: { show: boolean | undefined } = { show: false },
+): ReactElement | null {
+  return show ? <Divider className="h-5 mx-1" orientation="vertical" /> : null;
 }

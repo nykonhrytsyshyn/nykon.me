@@ -15,6 +15,7 @@ export type IconProps = SVGProps<SVGSVGElement> & {
 /** Icon id type */
 export type IconId =
   | "home"
+  | "about"
   | "work"
   | "gallery"
   | "mail"

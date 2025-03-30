@@ -8,11 +8,20 @@ export const siteConfig: SiteConfig = {
   description: "Personal website of Nykon Hrytsyshyn",
   navItems: [
     {
-      label: "Home",
       link: {
         href: "/",
       },
       icon: "home",
+      separation: {
+        right: true,
+      },
+    },
+    {
+      label: "About",
+      link: {
+        href: "/about",
+      },
+      icon: "about",
     },
     {
       label: "Work",

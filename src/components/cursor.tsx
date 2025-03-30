@@ -152,13 +152,8 @@ class Cursor extends Component<CursorProps, CursorState> {
    * @param event Mouse move event.
    */
   onMouseMove = (event: MouseEvent) => {
-    if (!this.state.isVisible) {
-      gsap.to(this.cursorRef, { opacity: 1, scale: 1, duration: 0.3 });
-      this.setState({ isVisible: true });
-    }
-
-    this.xTo?.(event.clientX);
-    this.yTo?.(event.clientY);
+    this.showCursor();
+    this.moveCursor(event.clientX, event.clientY);
   };
 
   /**
@@ -169,6 +164,36 @@ class Cursor extends Component<CursorProps, CursorState> {
    */
   onMouseOut = (event: MouseEvent) => {
     if (!event.relatedTarget) {
+      this.hideCursor();
+    }
+  };
+
+  /**
+   * Move the cursor to the specified position.
+   *
+   * @param x X position.
+   * @param y Y position.
+   */
+  moveCursor = (x: number, y: number) => {
+    this.xTo?.(x);
+    this.yTo?.(y);
+  };
+
+  /**
+   * Show the cursor if it is not visible.
+   */
+  showCursor = () => {
+    if (!this.state.isVisible) {
+      gsap.to(this.cursorRef, { opacity: 1, scale: 1, duration: 0.3 });
+      this.setState({ isVisible: true });
+    }
+  };
+
+  /**
+   * Hide the cursor if it is visible.
+   */
+  hideCursor = () => {
+    if (this.state.isVisible) {
       gsap.to(this.cursorRef, { opacity: 0, scale: 0, duration: 0.3 });
       this.setState({ isVisible: false });
     }
