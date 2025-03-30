@@ -72,7 +72,7 @@ export default function ThemeSwitch({
               "rounded-lg",
               "flex items-center justify-center",
               "group-data-[selected=true]:bg-transparent",
-              "!text-default-500",
+              "text-default-500!",
               "px-0",
               "mx-0",
             ],

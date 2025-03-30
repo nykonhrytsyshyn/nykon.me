@@ -27,7 +27,7 @@ export function GalleryCard({
         "w-64 h-full shrink-0",
         "flex flex-col justify-center items-center",
         "rounded-[2.5rem]",
-        "hover-target !transition-none",
+        "hover-target transition-none!",
       ])}
     >
       <Image
