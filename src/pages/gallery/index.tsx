@@ -18,7 +18,7 @@ export default function GalleryPage(): ReactElement {
 
   return (
     <DefaultLayout>
-      <section className="relative h-screen flex flex-col">
+      <section className="relative h-dvh flex flex-col">
         <Gallery properties={updateRows(rowCount)} />
       </section>
     </DefaultLayout>

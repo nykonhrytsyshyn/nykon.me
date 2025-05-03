@@ -9,10 +9,7 @@ export default class AppDocument extends Document {
       <Html lang="en">
         <Head />
         <body
-          className={clsx(
-            "min-h-screen font-sans antialiased",
-            fontSans.variable,
-          )}
+          className={clsx("min-h-dvh font-sans antialiased", fontSans.variable)}
         >
           <Main />
           <NextScript />

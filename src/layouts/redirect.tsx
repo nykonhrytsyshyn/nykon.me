@@ -10,7 +10,7 @@ import { fontMono } from "@configs/fonts";
 export default function RedirectLayout(): ReactElement {
   return (
     <div
-      className={`w-full h-screen flex items-center justify-center font-mono ${fontMono.variable}`}
+      className={`w-full h-dvh flex items-center justify-center font-mono ${fontMono.variable}`}
     >
       <span className="text-2xl bold">
         Redirecting
