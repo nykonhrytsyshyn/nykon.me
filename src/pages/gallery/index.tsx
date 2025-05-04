@@ -1,62 +1,54 @@
 import DefaultLayout from "@layouts/default";
-import React, { ReactElement, useCallback, useEffect, useState } from "react";
-import galleryCards, { maxImageHeight } from "@configs/content/gallery-cards";
+import React, { ReactElement, useEffect, useState } from "react";
+import galleryCards, {
+  cardWidth,
+  maxCardHeight,
+} from "@configs/content/gallery-cards";
 import "@styles/module/gallery.module.css";
 import { Gallery } from "@components/content/gallery";
 import useScrollAnimation from "@hooks/use-scroll-animation";
+import { GalleryCardProps } from "@type/gallery";
 
 export default function GalleryPage(): ReactElement {
   useScrollAnimation();
 
-  const [layout, setLayout] = useState({ rows: 1, columns: 3 });
-  const handleResize = useCallback(() => {
-    setLayout({
-      rows: Math.max(1, Math.floor(window.innerHeight / maxImageHeight)),
-      columns: Math.max(1, Math.floor(window.innerWidth / 256)),
-    });
-  }, []);
+  const [layout, setLayout] = useState<GalleryCardProps[][]>([]);
 
   useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, [handleResize]);
+    setLayout(generateInitialLayout(window.innerWidth, window.innerHeight));
+  }, []);
 
   return (
     <DefaultLayout>
       <section className="relative h-dvh flex flex-col">
-        <Gallery properties={generateLayout(layout.rows, layout.columns)} />
+        {layout.length > 0 && <Gallery properties={layout} />}
       </section>
     </DefaultLayout>
   );
 }
 
 /**
- * Generate a layout for the gallery based on the number of rows and columns.
+ * Generate the initial layout for the gallery.
  *
- * @param rowCount    The number of rows.
- * @param columnCount The number of columns.
- * @returns The layout for the gallery.
+ * @param width  The width of the gallery.
+ * @param height The height of the gallery.
+ * @returns The initial layout for the gallery.
  */
-function generateLayout(rowCount: number, columnCount: number) {
-  const totalCardsNeeded = rowCount * columnCount;
-  const fullDeck = [];
+function generateInitialLayout(
+  width: number,
+  height: number,
+): GalleryCardProps[][] {
+  const rowCount = Math.max(1, Math.floor(height / maxCardHeight));
+  const cardsPerRow = Math.ceil(width / cardWidth);
+  const baseCards = [...galleryCards];
 
-  /* Duplicate cards to fill the required number of cards */
-  while (fullDeck.length < totalCardsNeeded) {
-    fullDeck.push(...galleryCards);
-  }
+  return Array.from({ length: rowCount }, () => {
+    const shuffled = [...baseCards].sort(() => Math.random() - 0.5);
 
-  /* Shuffle and slice to the required number */
-  const shuffled = fullDeck
-    .sort(() => Math.random() - 0.5)
-    .slice(0, totalCardsNeeded);
+    while (shuffled.length < cardsPerRow) {
+      shuffled.push(...baseCards);
+    }
 
-  /* Distribute cards into rows and columns */
-  return Array.from({ length: rowCount }, (_, i) => {
-    const start = i * columnCount;
-
-    return shuffled.slice(start, start + columnCount);
+    return shuffled.slice(0, cardsPerRow);
   });
 }

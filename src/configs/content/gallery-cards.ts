@@ -2,7 +2,8 @@
 
 import type { GalleryCardProps } from "@type/gallery";
 
-export const maxImageHeight = 300;
+export const maxCardHeight = 260;
+export const cardWidth = 256;
 
 /** Gallery cards data. */
 export const galleryCards: GalleryCardProps[] = [

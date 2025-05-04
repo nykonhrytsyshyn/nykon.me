@@ -5,6 +5,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import galleryStyles from "@styles/module/gallery.module.css";
 import { useHorizontalLoop } from "@hooks/use-horizontal-loop";
+import { cardWidth } from "@configs/content/gallery-cards";
 
 /**
  * Gallery card component.
@@ -24,7 +25,7 @@ export function GalleryCard({
   return (
     <Card
       className={clsx([
-        "w-64 h-full shrink-0",
+        `w-[${cardWidth}px] h-full shrink-0`,
         "flex flex-col justify-center items-center",
         "rounded-[2.5rem]",
         "hover-target transition-none!",
@@ -60,7 +61,7 @@ function GalleryRow({
   const rowRef = useRef<HTMLDivElement | null>(null);
 
   useHorizontalLoop(rowRef, {
-    speed: Math.random() * (0.7 - 0.3) + 0.3,
+    speed: 0.5,
     reversed: reverse,
     paddingRight: 20,
   });
