@@ -1,6 +1,6 @@
 import DefaultLayout from "@layouts/default";
-import React, { ReactElement, useEffect, useState } from "react";
-import galleryCards from "@configs/content/gallery-cards";
+import React, { ReactElement, useCallback, useEffect, useState } from "react";
+import galleryCards, { maxImageHeight } from "@configs/content/gallery-cards";
 import "@styles/module/gallery.module.css";
 import { Gallery } from "@components/content/gallery";
 import useScrollAnimation from "@hooks/use-scroll-animation";
@@ -8,30 +8,55 @@ import useScrollAnimation from "@hooks/use-scroll-animation";
 export default function GalleryPage(): ReactElement {
   useScrollAnimation();
 
-  const [rowCount, setRowCount] = useState(3);
+  const [layout, setLayout] = useState({ rows: 1, columns: 3 });
+  const handleResize = useCallback(() => {
+    setLayout({
+      rows: Math.max(1, Math.floor(window.innerHeight / maxImageHeight)),
+      columns: Math.max(1, Math.floor(window.innerWidth / 256)),
+    });
+  }, []);
 
   useEffect(() => {
-    setRowCount(
-      window.innerHeight < 600 ? 1 : window.innerHeight < 800 ? 2 : 3,
-    );
-  }, []);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
 
   return (
     <DefaultLayout>
       <section className="relative h-dvh flex flex-col">
-        <Gallery properties={updateRows(rowCount)} />
+        <Gallery properties={generateLayout(layout.rows, layout.columns)} />
       </section>
     </DefaultLayout>
   );
 }
 
-function updateRows(count: number) {
-  const images = [...galleryCards, ...galleryCards];
+/**
+ * Generate a layout for the gallery based on the number of rows and columns.
+ *
+ * @param rowCount    The number of rows.
+ * @param columnCount The number of columns.
+ * @returns The layout for the gallery.
+ */
+function generateLayout(rowCount: number, columnCount: number) {
+  const totalCardsNeeded = rowCount * columnCount;
+  const fullDeck = [];
 
-  return Array.from({ length: count }, (_, i) =>
-    images.slice(
-      i * Math.ceil(images.length / count),
-      (i + 1) * Math.ceil(images.length / count),
-    ),
-  );
+  /* Duplicate cards to fill the required number of cards */
+  while (fullDeck.length < totalCardsNeeded) {
+    fullDeck.push(...galleryCards);
+  }
+
+  /* Shuffle and slice to the required number */
+  const shuffled = fullDeck
+    .sort(() => Math.random() - 0.5)
+    .slice(0, totalCardsNeeded);
+
+  /* Distribute cards into rows and columns */
+  return Array.from({ length: rowCount }, (_, i) => {
+    const start = i * columnCount;
+
+    return shuffled.slice(start, start + columnCount);
+  });
 }
