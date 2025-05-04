@@ -25,11 +25,12 @@ export function GalleryCard({
   return (
     <Card
       className={clsx([
-        `w-[${cardWidth}px] h-full shrink-0`,
+        "h-full shrink-0",
         "flex flex-col justify-center items-center",
         "rounded-[2.5rem]",
         "hover-target transition-none!",
       ])}
+      style={{ width: `${cardWidth}px` }}
     >
       <Image
         alt={properties.image.alt as string}
