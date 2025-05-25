@@ -49,7 +49,7 @@ export const redirects: Record<string, RedirectProps> = {
     description: "Visit my TikTok profile",
   },
   x: {
-    href: "https://x.com/p0loskun",
+    href: "https://x.com/nykonhrytsyshyn",
     title: "X",
     description: "Visit my X profile",
   },
