@@ -12,6 +12,9 @@ WORKDIR /app
 # Copy all project files and the Gradle wrapper.
 COPY . .
 
+# Grant executable permissions to the gradlew script
+RUN chmod +x ./gradlew
+
 # Build the project, skipping tests for a faster build.
 # We use the Gradle Wrapper script.
 RUN ./gradlew build -x test
