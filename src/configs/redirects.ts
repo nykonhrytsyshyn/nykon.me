@@ -29,7 +29,7 @@ export const redirects: Record<string, RedirectProps> = {
     description: "Visit my GitHub profile",
   },
   telegram: {
-    href: "https://t.me/nykon_ashotovich",
+    href: "https://t.me/nykon_channel",
     title: "Telegram",
     description: "Contact me via Telegram",
   },
