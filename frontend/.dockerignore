@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+build
+*.iml
+*.log
+Dockerfile
+.dockerignore
+npm-debug.log
+README.md
