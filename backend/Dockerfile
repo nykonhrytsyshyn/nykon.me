@@ -13,7 +13,7 @@ ARG SKIP_TESTS=true
 RUN if [ "$SKIP_TESTS" = "true" ]; then ./gradlew build -x test; else ./gradlew build; fi
 
 # --- Stage 2: Run the application ---
-FROM openjdk:21-jdk-slim
+FROM openjdk:21-jdk-slim AS runner
 
 WORKDIR /app
 
