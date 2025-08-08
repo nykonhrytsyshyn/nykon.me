@@ -31,7 +31,12 @@ export const redirects: Record<string, RedirectProps> = {
   telegram: {
     href: "https://t.me/nykon_channel",
     title: "Telegram",
-    description: "Contact me via Telegram",
+    description: "Visit my Telegram channel",
+  },
+  suggestbot: {
+    href: "https://t.me/nykon_suggestbot",
+    title: "Telegram Suggestions Bot",
+    description: "Send post suggestions to my Telegram channel",
   },
   youtube: {
     href: "https://youtube.com/c/Enchig",
