@@ -3,11 +3,11 @@ description: "Create a report about something that is not working"
 title: "[Bug]: "
 labels: [ "Bug" ]
 assignees:
-  - p0loskun
+  - nykonhrytsyshyn
 body:
 - type: markdown
   attributes:
-    value: "Your issue may have already been reported before, so please check for existing issues [here](https://github.com/p0loskun/nykon.me/issues/labels/bug) before reporting any bugs."
+    value: "Your issue may have already been reported before, so please check for existing issues [here](https://github.com/nykonhrytsyshyn/nykon.me/issues/labels/bug) before reporting any bugs."
 
 - type: dropdown
   attributes: 

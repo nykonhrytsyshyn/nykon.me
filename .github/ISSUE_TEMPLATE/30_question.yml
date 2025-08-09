@@ -3,11 +3,11 @@ description: "Ask a question about the project or its features"
 title: "[Question]: "
 labels: [ "Question" ]
 assignees:
-  - p0loskun
+  - nykonhrytsyshyn
 body:
 - type: markdown
   attributes:
-    value: "Please search [here](https://github.com/p0loskun/nykon.me/issues/labels/question) to ensure your question hasn’t already been answered."
+    value: "Please search [here](https://github.com/nykonhrytsyshyn/nykon.me/issues/labels/question) to ensure your question hasn’t already been answered."
     
 - type: textarea
   attributes:
