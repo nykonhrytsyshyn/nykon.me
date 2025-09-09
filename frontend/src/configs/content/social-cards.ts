@@ -14,10 +14,10 @@ export const socialCards: SocialCardProps[] = [
     },
   },
   {
-    title: "Telegram",
-    icon: "telegram",
+    title: "LinkedIn",
+    icon: "linkedin",
     link: {
-      href: redirect("telegram"),
+      href: redirect("linkedin"),
       target: "_blank",
     },
   },
@@ -26,6 +26,14 @@ export const socialCards: SocialCardProps[] = [
     icon: "github",
     link: {
       href: redirect("github"),
+      target: "_blank",
+    },
+  },
+  {
+    title: "Telegram",
+    icon: "telegram",
+    link: {
+      href: redirect("telegram"),
       target: "_blank",
     },
   },
@@ -66,14 +74,6 @@ export const socialCards: SocialCardProps[] = [
     icon: "reddit",
     link: {
       href: redirect("reddit"),
-      target: "_blank",
-    },
-  },
-  {
-    title: "LinkedIn",
-    icon: "linkedin",
-    link: {
-      href: redirect("linkedin"),
       target: "_blank",
     },
   },
