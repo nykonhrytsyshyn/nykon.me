@@ -108,6 +108,11 @@ export const redirects: Record<string, RedirectProps> = {
     title: "Donatello",
     description: "Support me on Donatello",
   },
+  tribute: {
+    href: "https://web.tribute.tg/l/19b",
+    title: "Tribute (Telegram)",
+    description: "Support me on Tribute (Telegram)"
+  }
 };
 
 export default redirects;
