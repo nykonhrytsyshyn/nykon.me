@@ -1,7 +1,0 @@
-.gradle
-build
-*.iml
-*.log
-Dockerfile
-.dockerignore
-README.md
