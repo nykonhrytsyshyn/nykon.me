@@ -1,0 +1,66 @@
+name: "CodeQL Advanced"
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+    branches: [ "release" ]
+  schedule:
+    - cron: '41 15 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  # Check if the commit message contains [ql-skip] to avoid unnecessary runs
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        run: |
+          if [[ "${{ github.event.head_commit.message }}" == *"[ql-skip]"* ]]; then
+            echo "should_skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_skip=false" >> $GITHUB_OUTPUT
+          fi
+
+  # Perform CodeQL analysis
+  analyze:
+    needs: check
+    if: needs.check.outputs.should_skip != 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: "actions"
+            build-mode: "none"
+          - language: "javascript-typescript"
+            build-mode: "none"
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: "Initialize CodeQL"
+        uses: github/codeql-action/init@v4
+        with:
+          config-file: "./.github/codeql/codeql-config.yml"
+          languages: "${{ matrix.language }}"
+          build-mode: "${{ matrix.build-mode }}"
+          queries: "security-and-quality"
+
+      - name: "Perform CodeQL Analysis"
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:${{matrix.language}}"

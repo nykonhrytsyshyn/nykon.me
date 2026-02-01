@@ -1,0 +1,14 @@
+name: "CodeQL Config"
+
+paths-ignore:
+  - "node_modules"
+  - ".next"
+  - "out"
+  - "**/*.test.js"
+  - "**/*.test.ts"
+  - "**/*.spec.js"
+  - "**/*.spec.ts"
+  - "package-lock.json"
+
+queries:
+  - uses: "security-and-quality"
