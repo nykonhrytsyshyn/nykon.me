@@ -1,2 +1,10 @@
+# ============================================================================ #
+#                          Funding Configuration File                          #
+# ============================================================================ #
+# This file is used by GitHub to display funding options for the repository.   #
+# You can specify various funding platforms and usernames to enable sponsors   #
+# to support the project.                                                      #
+# ============================================================================ #
+
 patreon: Nykon
-custom: ['https://nykon.me/streamlabs', 'https://nykon.me/donatello']
+custom: [ "https://nykon.me/streamlabs", "https://nykon.me/donatello" ]

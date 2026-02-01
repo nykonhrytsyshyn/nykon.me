@@ -1,12 +1,14 @@
 blank_issues_enabled: false
+
 contact_links:
-  - name: 🌐 Website
-    url: https://nykon.me/
-    about: Check out my website
-  - name: ✈️ Telegram
-    url: https://nykon.me/telegram
-    about: My day-to-day life, thoughts and news
-  - name: 💳 Patreon
-    url: https://nykon.me/patreon
-    about: You can support me and my work by donating
-  
+  - name:  "💬 Discussions & Help"
+    about: "Have a question or need help with macros? Ask here."
+    url:   "https://git.nykon.me/Mach3Macros/discussions"
+
+  - name:  "Website"
+    about: "Check out my personal website"
+    url:   "https://nykon.me/"
+
+  - name:  "Socials"
+    about: "Join me on social media platforms"
+    url:   "https://socials.nykon.me/"
