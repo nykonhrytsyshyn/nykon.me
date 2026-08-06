@@ -24,15 +24,18 @@ export default function HomePage(): ReactElement {
         >
           <Image
             isBlurred
-            alt="Gigacock"
+            alt="Portrait"
             className={`${styles.scrollAnimated} rounded-full shadow-lg my-6`}
             height={200}
-            src="/img/gigacock.webp"
+            src="/img/portrait.webp"
             width={200}
           />
           <h1 className={`${styles.scrollAnimated} text-4xl font-bold`}>
             {siteConfig.name}
           </h1>
+          <p className={`${styles.scrollAnimated} text-lg text-neutral-600 dark:text-neutral-500 py-3 leading-5`}>
+            Software & Mechanical Engineer • Open Source • Social Media
+          </p>
         </article>
         <article className="flex flex-col justify-center gap-10 w-full">
           {socialCategories.map((category) => (
