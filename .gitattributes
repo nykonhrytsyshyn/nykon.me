@@ -11,23 +11,25 @@
 *.gradle     text eol=lf encoding=UTF-8
 *.gradle.kts text eol=lf encoding=UTF-8
 
-# Data files
-*.sql text
-*.tab text
-*.tsv text
-*.txt text
-*.csv text eol=crlf
-
 # TypeScript & JavaScript
-*.ts  text
-*.tsx text
-*.js  text
-*.jsx text
+*.ts  text eol=lf encoding=UTF-8
+*.tsx text eol=lf encoding=UTF-8
+*.mts text eol=lf encoding=UTF-8
+*.cts text eol=lf encoding=UTF-8
+*.js  text eol=lf encoding=UTF-8
+*.jsx text eol=lf encoding=UTF-8
+*.mjs text eol=lf encoding=UTF-8
+*.cjs text eol=lf encoding=UTF-8
+
+# Go source files
+*.go   text eol=lf encoding=UTF-8
+go.mod text eol=lf encoding=UTF-8
+go.sum text eol=lf encoding=UTF-8 -diff
 
 # HTML / CSS
-*.html text
-*.css  text
-*.scss text
+*.html text eol=lf encoding=UTF-8
+*.css  text eol=lf encoding=UTF-8
+*.scss text eol=lf encoding=UTF-8
 
 # Shell scripts
 *.bash text eol=lf
@@ -36,7 +38,7 @@
 *.sh   text eol=lf
 *.zsh  text eol=lf
 
-# Windows batch scripts
+# Windows scripts
 *.bat text eol=crlf
 *.cmd text eol=crlf
 *.ps1 text eol=crlf

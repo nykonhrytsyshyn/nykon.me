@@ -1,0 +1,26 @@
+{
+  "name": "Никон Грицишин",
+  "description": "Програмний та механічний інженер • Open Source • Social Media",
+  "footer": {
+    "theme": "Тема",
+    "language": "Мова",
+    "copyright": "©",
+    "company": "Никон Грицишин",
+    "all_rights": "Всі права захищені"
+  },
+  "share": {
+    "title": "Поділитися посиланням",
+    "copy": "Копіювати",
+    "telegram": "Telegram",
+    "viber": "Viber",
+    "email": "Email",
+    "x": "X",
+    "threads": "Threads",
+    "reddit": "Reddit",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn",
+    "messenger": "Messenger",
+    "more": "Більше"
+  }
+}

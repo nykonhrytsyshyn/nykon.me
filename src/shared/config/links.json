@@ -1,0 +1,321 @@
+{
+  "categories": [
+    {
+      "id": "socials",
+      "title": {
+        "en": "Socials",
+        "uk": "Соцмережі"
+      },
+      "subtitle": {
+        "en": "Follow me on social media",
+        "uk": "Слідкуйте за мною в соцмережах"
+      }
+    },
+    {
+      "id": "donate",
+      "title": {
+        "en": "Donate",
+        "uk": "Донати"
+      },
+      "subtitle": {
+        "en": "Support me with a donation",
+        "uk": "Підтримайте мене донатом"
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": "email",
+      "icon": "mail",
+      "categoryId": "socials",
+      "href": "mailto:contact@nykon.me",
+      "title": {
+        "en": "Mail",
+        "uk": "Пошта"
+      },
+      "description": {
+        "en": "Contact me directly via email.",
+        "uk": "Зв'яжіться з мною безпосередньо електронною поштою."
+      },
+      "priority": 10
+    },
+    {
+      "id": "telegram",
+      "icon": "telegram",
+      "categoryId": "socials",
+      "href": "https://telegram.me/nykon_hrytsyshyn",
+      "title": {
+        "en": "Telegram",
+        "uk": "Telegram"
+      },
+      "description": {
+        "en": "Contact me directly via Telegram.",
+        "uk": "Зв'яжіться зі мною безпосередньо через Telegram."
+      },
+      "priority": 20
+    },
+    {
+      "id": "linkedin",
+      "icon": "linkedin",
+      "categoryId": "socials",
+      "href": "https://linkedin.com/in/nykon",
+      "title": {
+        "en": "LinkedIn",
+        "uk": "LinkedIn"
+      },
+      "description": {
+        "en": "Visit LinkedIn profile.",
+        "uk": "Відвідати профіль LinkedIn."
+      },
+      "priority": 30
+    },
+    {
+      "id": "github",
+      "icon": "github",
+      "categoryId": "socials",
+      "href": "https://github.com/nykonhrytsyshyn",
+      "title": {
+        "en": "GitHub",
+        "uk": "GitHub"
+      },
+      "description": {
+        "en": "Visit GitHub profile.",
+        "uk": "Відвідати профіль GitHub."
+      },
+      "priority": 40
+    },
+    {
+      "id": "instagram",
+      "icon": "instagram",
+      "categoryId": "socials",
+      "href": "https://instagram.com/nykon.hrytsyshyn",
+      "title": {
+        "en": "Instagram",
+        "uk": "Instagram"
+      },
+      "description": {
+        "en": "Visit Instagram profile.",
+        "uk": "Відвідати профіль Instagram."
+      },
+      "priority": 50
+    },
+    {
+      "id": "twitch",
+      "icon": "twitch",
+      "categoryId": "socials",
+      "href": "https://twitch.tv/nykon_ashotovich",
+      "title": {
+        "en": "Twitch",
+        "uk": "Twitch"
+      },
+      "description": {
+        "en": "Visit Twitch channel.",
+        "uk": "Відвідати Twitch-канал."
+      },
+      "disabled": true,
+      "priority": 60
+    },
+    {
+      "id": "youtube",
+      "icon": "youtube",
+      "categoryId": "socials",
+      "href": "https://youtube.com/c/Enchig",
+      "title": {
+        "en": "YouTube",
+        "uk": "YouTube"
+      },
+      "description": {
+        "en": "Visit YouTube channel.",
+        "uk": "Відвідати YouTube-канал."
+      },
+      "disabled": true,
+      "priority": 70
+    },
+    {
+      "id": "tiktok",
+      "icon": "tiktok",
+      "categoryId": "socials",
+      "href": "https://tiktok.com/@nykon_ashotovich",
+      "title": {
+        "en": "TikTok",
+        "uk": "TikTok"
+      },
+      "description": {
+        "en": "Visit TikTok profile.",
+        "uk": "Відвідати профіль TikTok."
+      },
+      "disabled": true,
+      "priority": 80
+    },
+    {
+      "id": "x",
+      "icon": "x",
+      "categoryId": "socials",
+      "href": "https://x.com/nykonhrytsyshyn",
+      "title": {
+        "en": "X (Twitter)",
+        "uk": "X (Twitter)"
+      },
+      "description": {
+        "en": "Visit X profile.",
+        "uk": "Відвідати профіль X."
+      },
+      "priority": 90
+    },
+    {
+      "id": "reddit",
+      "icon": "reddit",
+      "categoryId": "socials",
+      "href": "https://reddit.com/u/TheDrMine/",
+      "title": {
+        "en": "Reddit",
+        "uk": "Reddit"
+      },
+      "description": {
+        "en": "Visit Reddit profile.",
+        "uk": "Відвідати профіль Reddit."
+      },
+      "priority": 100
+    },
+    {
+      "id": "medium",
+      "icon": "medium",
+      "categoryId": "socials",
+      "href": "https://nykon.medium.com/",
+      "title": {
+        "en": "Medium",
+        "uk": "Medium"
+      },
+      "description": {
+        "en": "Visit Medium.",
+        "uk": "Відвідати Medium."
+      },
+      "disabled": true,
+      "priority": 110
+    },
+    {
+      "id": "npm",
+      "icon": "npm",
+      "categoryId": "socials",
+      "href": "https://npmjs.com/~nykon",
+      "title": {
+        "en": "NPM",
+        "uk": "NPM"
+      },
+      "description": {
+        "en": "Visit NPM.",
+        "uk": "Відвідати NPM."
+      },
+      "disabled": true,
+      "priority": 120
+    },
+    {
+      "id": "spotify",
+      "icon": "spotify",
+      "categoryId": "socials",
+      "href": "https://open.spotify.com/user/3134n7xeq35mbd6dnipewpgoujku",
+      "title": {
+        "en": "Spotify",
+        "uk": "Spotify"
+      },
+      "description": {
+        "en": "Visit Spotify.",
+        "uk": "Відвідати Spotify."
+      },
+      "disabled": true,
+      "priority": 130
+    },
+    {
+      "id": "wakatime",
+      "icon": "wakatime",
+      "categoryId": "socials",
+      "href": "https://wakatime.com/@nykon",
+      "title": {
+        "en": "WakaTime",
+        "uk": "WakaTime"
+      },
+      "description": {
+        "en": "Visit WakaTime.",
+        "uk": "Відвідати WakaTime."
+      },
+      "priority": 140
+    },
+    {
+      "id": "steam",
+      "icon": "steam",
+      "categoryId": "socials",
+      "href": "https://steamcommunity.com/id/p0loskun/",
+      "title": {
+        "en": "Steam",
+        "uk": "Steam"
+      },
+      "description": {
+        "en": "Visit Steam.",
+        "uk": "Відвідати Steam."
+      },
+      "priority": 150
+    },
+    {
+      "id": "patreon",
+      "icon": "patreon",
+      "categoryId": "donate",
+      "href": "https://patreon.com/c/Nykon",
+      "title": {
+        "en": "Patreon",
+        "uk": "Patreon"
+      },
+      "description": {
+        "en": "Support me on Patreon.",
+        "uk": "Підтримайте мене на Patreon."
+      },
+      "disabled": true,
+      "priority": 200
+    },
+    {
+      "id": "streamlabs",
+      "icon": "streamlabs",
+      "categoryId": "donate",
+      "href": "https://streamlabs.com/nykon_ashotovich/tip",
+      "title": {
+        "en": "Streamlabs",
+        "uk": "Streamlabs"
+      },
+      "description": {
+        "en": "Support me on Streamlabs.",
+        "uk": "Підтримайте мене на Streamlabs."
+      },
+      "priority": 210
+    },
+    {
+      "id": "donatello",
+      "icon": "donatello",
+      "categoryId": "donate",
+      "href": "https://donatello.to/nykon",
+      "title": {
+        "en": "Donatello",
+        "uk": "Donatello"
+      },
+      "description": {
+        "en": "Support me on Donatello.",
+        "uk": "Підтримайте мене на Donatello."
+      },
+      "priority": 220
+    },
+    {
+      "id": "tribute",
+      "icon": "telegram",
+      "categoryId": "donate",
+      "href": "https://web.tribute.tg/l/19b",
+      "title": {
+        "en": "Tribute (Telegram)",
+        "uk": "Tribute (Telegram)"
+      },
+      "description": {
+        "en": "Support me on Telegram.",
+        "uk": "Підтримайте мене на Telegram."
+      },
+      "disabled": true,
+      "priority": 230
+    }
+  ]
+}
