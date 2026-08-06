@@ -29,9 +29,9 @@ export const redirects: Record<string, RedirectProps> = {
     description: "Visit my GitHub profile",
   },
   telegram: {
-    href: "https://telegram.me/nykon_channel",
+    href: "https://telegram.me/nykon_hrytsyshyn",
     title: "Telegram",
-    description: "Visit my Telegram channel",
+    description: "Contact me via Telegram",
   },
   suggestbot: {
     href: "https://telegram.me/nykon_suggestbot",
@@ -111,8 +111,8 @@ export const redirects: Record<string, RedirectProps> = {
   tribute: {
     href: "https://web.tribute.tg/l/19b",
     title: "Tribute (Telegram)",
-    description: "Support me on Tribute (Telegram)"
-  }
+    description: "Support me on Tribute (Telegram)",
+  },
 };
 
 export default redirects;

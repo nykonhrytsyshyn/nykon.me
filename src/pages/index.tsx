@@ -1,7 +1,6 @@
 import type { SocialCategoryId } from "@type/social";
 
 import React, { ReactElement } from "react";
-import { Link } from "@heroui/link";
 import { Image } from "@heroui/image";
 import styles from "@styles/module/scroll-animated.module.css";
 import siteConfig from "@configs/site";
@@ -9,7 +8,6 @@ import DefaultLayout from "@layouts/default";
 import socialCards from "@configs/content/social-cards";
 import socialCategories from "@configs/content/social-categories";
 import useScrollAnimation from "@hooks/use-scroll-animation";
-import redirect from "@utils/redirect";
 import { SocialCard, SocialCategory } from "@components/content/social";
 
 export default function HomePage(): ReactElement {
@@ -35,20 +33,6 @@ export default function HomePage(): ReactElement {
           <h1 className={`${styles.scrollAnimated} text-4xl font-bold`}>
             {siteConfig.name}
           </h1>
-          <p
-            className={`${styles.scrollAnimated} text-lg text-neutral-600 dark:text-neutral-500 py-3 leading-5`}
-          >
-            Working on{" "}
-            <Link
-              className="text-neutral-400"
-              href={redirect("minersstudios")}
-              target="_blank"
-            >
-              @MinersStudios
-            </Link>
-            <br />
-            Open source software developer
-          </p>
         </article>
         <article className="flex flex-col justify-center gap-10 w-full">
           {socialCategories.map((category) => (

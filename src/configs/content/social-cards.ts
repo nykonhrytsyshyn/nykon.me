@@ -38,6 +38,7 @@ export const socialCards: SocialCardProps[] = [
     },
   },
   {
+    disabled: true,
     title: "YouTube",
     icon: "youtube",
     link: {
@@ -46,6 +47,7 @@ export const socialCards: SocialCardProps[] = [
     },
   },
   {
+    disabled: true,
     title: "Twitch",
     icon: "twitch",
     link: {
@@ -54,6 +56,7 @@ export const socialCards: SocialCardProps[] = [
     },
   },
   {
+    disabled: true,
     title: "TikTok",
     icon: "tiktok",
     link: {
@@ -96,6 +99,7 @@ export const socialCards: SocialCardProps[] = [
     },
   },
   {
+    disabled: true,
     title: "Spotify",
     icon: "spotify",
     link: {
@@ -120,6 +124,7 @@ export const socialCards: SocialCardProps[] = [
     },
   },
   {
+    disabled: true,
     title: "Patreon",
     icon: "patreon",
     link: {
