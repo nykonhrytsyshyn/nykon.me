@@ -10,16 +10,16 @@ export function AboutSection() {
       id="about"
     >
       <div className="group/avatar relative flex items-center justify-center mb-8">
-        <div className="absolute -inset-1 animate-[spin_3s_linear_infinite] rounded-full bg-linear-to-tr from-black via-white to-black opacity-75 blur-xs transition-all duration-500 group-hover/avatar:opacity-100 group-hover/avatar:blur-sm dark:from-white dark:via-black dark:to-white" />
+        <div className="absolute -inset-1 animate-[spin_3s_linear_infinite] rounded-full bg-linear-to-tr from-black via-white to-black opacity-75 blur-xs transition-all duration-500 group-hover/avatar:opacity-100 group-hover/avatar:blur-sm" />
 
         <Avatar className="size-50 transition-transform duration-500 group-hover/avatar:scale-95">
-          <AvatarImage alt="User story" src="/assets/portrait.webp" />
+          <AvatarImage alt="User story" src="/assets/avatar.webp" />
           <AvatarFallback>NH</AvatarFallback>
         </Avatar>
       </div>
 
       <h1 className="scrollAnimated text-4xl font-bold">{t("common.name")}</h1>
-      <p className="scrollAnimated text-lg text-neutral-600 dark:text-neutral-500 pt-3 leading-5">
+      <p className="scrollAnimated text-lg text-neutral-500 pt-3 leading-5">
         {t("common.description")}
       </p>
     </section>
