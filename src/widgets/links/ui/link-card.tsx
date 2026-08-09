@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactElement } from "react";
+
 import { type LinkCardProps, getContent } from "@widgets/links";
 
 import { useI18n } from "@features/i18n";

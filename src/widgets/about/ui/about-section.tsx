@@ -1,4 +1,5 @@
 import { useT } from "@features/i18n";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@shared/ui/avatar";
 
 export function AboutSection() {

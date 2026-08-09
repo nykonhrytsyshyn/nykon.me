@@ -8,7 +8,13 @@ export const siteConfig = {
   canonical: "https://nykon.me",
   author: "Nykon Hrytsyshyn",
   image: "/assets/og-image.png",
-  keywords: ["Nykon Hrytsyshyn", "nykon.me", "portfolio", "software engineer", "mechanical engineer"],
+  keywords: [
+    "Nykon Hrytsyshyn",
+    "nykon.me",
+    "portfolio",
+    "software engineer",
+    "mechanical engineer",
+  ],
 
   /* Social */
 
@@ -54,13 +60,7 @@ export const siteConfig = {
       search: true,
       aiInput: true,
     },
-    disallow: [
-      "/_astro/",
-      "/assets/",
-      "/api/",
-      "/email",
-      "/telegram",
-    ],
+    disallow: ["/_astro/", "/assets/", "/api/", "/email", "/telegram"],
   },
 
   /* Security (RFC 9116) */

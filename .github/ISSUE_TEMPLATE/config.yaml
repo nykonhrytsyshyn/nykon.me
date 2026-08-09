@@ -1,10 +1,6 @@
 blank_issues_enabled: false
 
 contact_links:
-  - name:  "💬 Discussions & Help"
-    about: "Have a question or need help with macros? Ask here."
-    url:   "https://git.nykon.me/Mach3Macros/discussions"
-
   - name:  "Website"
     about: "Check out my personal website"
     url:   "https://nykon.me/"

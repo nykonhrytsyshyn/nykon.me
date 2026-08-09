@@ -2,24 +2,24 @@ import { type ComponentType } from "react";
 
 import {
   DiscordIcon,
+  DonatelloIcon,
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   MailIcon,
-  PatreonIcon,
-  RedditIcon,
-  TelegramIcon,
-  TikTokIcon,
-  TwitchIcon,
-  XIcon,
-  YouTubeIcon,
-  DonatelloIcon,
   MediumIcon,
   NPMIcon,
+  PatreonIcon,
+  RedditIcon,
   SpotifyIcon,
   SteamIcon,
   StreamlabsIcon,
+  TelegramIcon,
+  TikTokIcon,
+  TwitchIcon,
   WakaTimeIcon,
+  XIcon,
+  YouTubeIcon,
 } from "./icons";
 import type { IconId, IconProps } from "./icons";
 
