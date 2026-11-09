@@ -64,7 +64,7 @@
     "@astrojs/sitemap": "^3.7.4",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.5",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/estree": "^1.0.10",
     "@types/node": "^26.6.6",
@@ -81,7 +81,7 @@
     "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "shadcn": "^4.23.0",
-    "tailwindcss": "^4.3.3",
+    "tailwindcss": "^4.3.5",
     "tree-node-cli": "^3.0.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.1"
